@@ -1,16 +1,5 @@
-﻿@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+﻿
 
-/* New font */
-@font-face {
-    font-family: 'demos';
-    src:url('fonts/demos.eot?9wdv67');
-    src:url('fonts/demos.eot?#iefix9wdv67') format('embedded-opentype'),
-        url('fonts/demos.woff?9wdv67') format('woff'),
-        url('fonts/demos.ttf?9wdv67') format('truetype'),
-        url('fonts/demos.svg?9wdv67#demos') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 
 /*Roboto Font used in Material Theme preview*/
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,300,300italic);
@@ -85,12 +74,28 @@ body,h1,h2,h3,h4,p,ul,li,a,button,.main-nav,.kendo-nav,#banner p,.browsers,#nav-
     list-style:none;
 }
 
-body {
+body.crm {
     background-color: #fff;
-    color: #555;
     font: 400 12px Arial, Helvetica, sans-serif;
     min-width: 1230px;
     position: relative;
+    color: #676a6c;
+    font-family: 'Microsoft Yahei UI', 'Microsoft Yahei', Verdana, Simsun, 'Segoe UI Light', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.crm h1, 
+.crm h2, 
+.crm h3, 
+.crm h4, 
+.crm h5, 
+.crm h6, 
+.crm .h1, 
+.crm .h2, 
+.crm .h3, 
+.crm .h4, 
+.crm .h5,
+.crm .h6 {
+    font-family: 'Microsoft Yahei UI', 'Microsoft Yahei', Verdana, Simsun, 'Segoe UI Light', 'Helvetica Neue', Arial, sans-serif;
 }
 
 body,
@@ -510,13 +515,13 @@ div.submenu-box ol {
 #crmTitle,
 #wrappers-source-code h2
 {
-    color:#000;
+    color:#676a6c;
     font-style: normal;
     font-variant: normal;
     font-size: 24px;
     line-height: 1;
-    font-family: Arial,Helvetica,sans-serif;
-    letter-spacing: -0.04em;
+    font-family: 'Microsoft Yahei UI', 'Microsoft Yahei', Verdana, Simsun, 'Segoe UI Light', 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: 0.05em;
     display: block;
     font-weight: 400;
     z-index: 100;
@@ -1177,8 +1182,8 @@ pre.prettyprint
 
 #inspector-container .kendo-inspector .editable-object .codefold.highlight > .codefold-button,
 #inspector-container .kendo-inspector .editable-object .codefold.highlight > .codefold-button:after {
-	background-color: #fff;
-	color: #036c9c;
+    background-color: #fff;
+    color: #036c9c;
     cursor: pointer;
 }
  
@@ -2272,10 +2277,11 @@ a.footer-links:hover,
 
 .root-nav-categories h3,
 #crm-nav h3 {
-    color: #000;
+    color: #0070c9;
     font-size: 14px;
+    font-weight:600;
     line-height: 14px;
-    padding: 0.5em 0 0.5em 3.571em;
+    padding: 0.5em 0.25em;
     text-transform: uppercase;
 }
 
@@ -2345,20 +2351,40 @@ a.footer-links:hover,
 #crm-nav li a {
     font-size: 14px;
     line-height: 14px;
-    color: #2d3e50;
+    color: #676a6c;
     display: block;
     padding: 0.5em 0 0.5em 3.571em;
     transition: all .2s ease;
 }
 
-#root-nav li a:hover,
-#root-nav li a.active,
-#crm-nav li a:hover,
-#back-forward:hover {
-    color: #000;
+ 
+
+
+#root-nav li.active a
+{
+    color: #0070c9;
     text-decoration: none;
-    background-color: #e2e4e7;
+    
+    border-left:4px solid #0070c9;
 }
+
+
+#root-nav li a:hover,
+#crm-nav li:hover,
+#back-forward:hover{
+    color: #0070c9;
+    text-decoration: none;
+
+}
+
+#root-nav li a:hover > i,
+#crm-nav li:hover > i,
+#back-forward:hover{
+    color: transparent;
+
+}
+
+
 
 .k-hover-enabled #root-nav li a:hover,
 .k-hover-enabled #crm-nav li a:hover {
@@ -2375,16 +2401,14 @@ a.footer-links:hover,
 #codeStrip,
 #resources-technologies {
     clear: both;
-    margin: 4.583em 7.500em 5.000em 7.500em;
+    margin: 1em 3em;
 }
 
 #crmWrap .mobilecrm {
     background: white;
 }
 
-#crmTitle {
-    margin: 2.250em 3.750em 2.500em 3.750em;
-}
+
 
 #codeStrip .documentation-link,
 .try-kendo {
@@ -2442,19 +2466,19 @@ a.footer-links:hover,
 
 #nav-wrapper {
     width: 220px;
-    border-top: 1px solid #e2e4e7;
-    border-right: 1px solid #e2e4e7;
     overflow-x: hidden;
     overflow-y: auto;
-    position: relative;
+    position: absolute;
     float: left;
     clear: left;
-    background-color: #f5f7f8;
+    background-color: #fff;
     height: 100%;
+    bottom: 0;
+    top: 8em;
 }
 
 #nav {
-    width: 600px;
+    
 
     white-space: nowrap;
     margin-left: -300px;
@@ -2467,7 +2491,7 @@ a.footer-links:hover,
 }
 
 #root-nav, #crm-nav {
-    width: 299px;
+    width: 220px;
     float: left;
 }
 
@@ -2532,6 +2556,8 @@ a.footer-links:hover,
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
+    margin-left: 220px;
+ 
 }
 
 #crm-search-wrapper,
@@ -3124,14 +3150,6 @@ html.k-materialblack .demo-section.k-content {
   }
 
 
-#crm-nav-logo{
-    width: 220px;
-    float: left;
-    clear: left;
-    background-color: #f5f7f8;
-    border-right: 1px solid #e2e4e7;
-    border-top: 1px solid #e2e4e7;
-}
 
 .crm-nav .navbar{
     margin-bottom: 0;
@@ -3149,4 +3167,199 @@ html.k-materialblack .demo-section.k-content {
 
 .crm-pagehead{
     height:90px;
+}
+
+.crm-nav .navbar-default .navbar-nav>li>a {
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+/*导航栏 模块导航样式*/
+.crm-nav .navbar-default .nav-model>li>a:hover,
+.crm-nav .navbar-default .nav-model>li>a:focus {
+    background-color: #4679bd;
+    color: #fff;
+    font-size: 16px;  
+}
+
+/*导航栏 最右导航样式*/
+.crm-nav .navbar-default .navbar-right>li>a:hover,
+.crm-nav .navbar-default .navbar-right>li>a:focus {
+    background-color: #4679bd;
+    color: #fff;
+}
+
+.crm-nav .navbar-default .navbar-nav>li.active>a:hover,
+.crm-nav .navbar-default .navbar-nav>li.active>a:focus {
+    
+    font-size: 14px;
+   
+}
+
+
+
+.crm-nav .navbar-default{
+    background-color: #4072b4;
+    border-radius: 0px;
+    border: 0px;
+}
+
+.crm-nav .navbar-default .navbar-nav>.active>a, 
+.crm-nav .navbar-default .navbar-nav>.active>a:focus,
+.crm-nav .navbar-default .navbar-nav>.active>a:hover{
+    background-color: #fff;
+    color: #0070c9;
+    
+}
+
+.nav > li > a i {
+  margin-right: 6px;
+}
+
+.count-info .label {
+  line-height: 12px;
+  padding: 2px 5px;
+  position: absolute;
+  right: 6px;
+  top: 12px;
+}
+
+.label-primary,
+.badge-primary {
+  background-color: #1ab394;
+  color: #FFFFFF;
+}
+.label-success,
+.badge-success {
+  background-color: #1c84c6;
+  color: #FFFFFF;
+}
+.label-warning,
+.badge-warning {
+  background-color: #f8ac59;
+  color: #FFFFFF;
+}
+.label-warning-light,
+.badge-warning-light {
+  background-color: #f8ac59;
+  color: #ffffff;
+}
+.label-danger,
+.badge-danger {
+  background-color: #ed5565;
+  color: #FFFFFF;
+}
+.label-info,
+.badge-info {
+  background-color: #23c6c8;
+  color: #FFFFFF;
+}
+.label-inverse,
+.badge-inverse {
+  background-color: #262626;
+  color: #FFFFFF;
+}
+.label-white,
+.badge-white {
+  background-color: #FFFFFF;
+  color: #5E5E5E;
+}
+.label-white,
+.badge-disable {
+  background-color: #2A2E36;
+  color: #8B91A0;
+}
+
+.crm-nav .navbar-default .navbar-nav>.open>a, 
+.crm-nav .navbar-default .navbar-nav>.open>a:focus, 
+.crm-nav .navbar-default .navbar-nav>.open>a:hover {
+    background-color:#4679bd;
+    color: #fff;
+}
+
+.nav-model li{
+    min-width: 94px;
+    text-align: center;
+}
+
+
+#root-nav li > a > i{
+    color:#fff;
+    padding-right:0.5em;
+}
+
+.section-activities{
+    padding:0.5em 3em;
+}
+.section-activities button{
+    background-color: transparent;
+    color:#0070c9;
+    line-height: 13px;
+    padding: 0.5em 1.5em;
+    border-radius: 2px;
+    text-align: center;
+    border: 1px solid rgba(0, 112, 201, 0.5);
+    margin: 0.2em 0.2em 0;
+    transition: all .5s;
+}
+
+.section-activities button:hover,
+.section-activities button:active
+{
+    background-color: #0070c9;
+    color:#fff;
+    cursor: pointer;
+}
+.section-activities button:hover a,
+.section-activities button:active a{
+    color:#fff;
+}
+
+ 
+
+.section-activities button a:hover,
+.section-activities button a:active{
+    color:#fff;
+    text-decoration:none;
+}
+
+#section-title{
+    padding:1em 2em 1em 2em;
+    background-color:#fff;
+    border-bottom: 1px solid #D3D3D3
+}
+
+.k-selectable .k-state-selected > td > a{
+    color:#fff;
+}
+
+.crm-fst-line{
+    margin: 2em 1em 0.5em 1em;
+}
+
+.crm-filter-btn .k-button{
+    padding:0.175em 5em;
+    margin-bottom:1.75em;
+    border-color: #0070c9;
+    color: #0070c9;
+}
+
+.crm-filter-btn .k-button:hover{
+    background-color: #0070c9;
+    border-color:#0070c9;
+    color: #fff;
+}
+
+.crm-fst-line .k-button{
+    padding:0.175em 0.5em;
+    margin-bottom:1.75em;
+    border-color: #0070c9;
+    color: #0070c9;
+}
+
+.crm-fst-line .k-button:hover{
+    background-color: #0070c9;
+    border-color:#0070c9;
+    color: #fff;
 }

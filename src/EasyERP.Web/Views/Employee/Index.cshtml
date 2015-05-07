@@ -1,8 +1,9 @@
 ﻿@using System.Web.Optimization
-
 @section SectionTitle
 {
-    员工信息
+    <h1 id="crmTitle">
+        <strong>员工信息</strong>
+    </h1>
 }
 
 @Html.ActionLink("创建员工", "Create")
@@ -13,5 +14,5 @@
 
 @section scripts
 {
-    @Scripts.Render("~/Scripts/employee/employee.js");
+    @Scripts.Render("~/Scripts/employee/employee.js")
 }

@@ -1,15 +1,13 @@
-﻿
-namespace Doamin.Service.Factory
+﻿namespace Doamin.Service.Factory
 {
     using System;
     using System.Collections.Generic;
-
     using Domain.Model.Factory;
+    using Infrastructure.Utility;
 
     public interface IStatisticService<TModel> where TModel : Statistic
     {
-        IEnumerable<TModel> GetStatisticsByDate(DateTime from);
-
+        PagedResult<TModel> GetStatisticsByDate(DateTime from, int page, int pageSize);
         void BatchUpdateStatisitcs(IEnumerable<TModel> workTimeItems);
     }
 }
